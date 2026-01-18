@@ -12,8 +12,8 @@
         theme: {
           extend: {
             fontFamily: {
-              sans: ['Pretendard', 'Noto Sans KR', 'sans-serif'],
-              display: ['Song Myung', 'serif'],
+              sans: ['Pretendard Variable', 'Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'sans-serif'],
+              display: ['Pretendard Variable', 'Pretendard', 'sans-serif'],
               inter: ['Inter', 'sans-serif'],
               mono: ['JetBrains Mono', 'monospace'],
             }
@@ -22,11 +22,11 @@
       }
     </script>
     
-    <!-- Font Imports -->
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <!-- Font Imports (Pretendard Variable for better performance and weight control) -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Song+Myung&family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500;800&family=Noto+Sans+KR:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;800&display=swap" rel="stylesheet">
     
     <!-- Iconify Script -->
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
@@ -37,8 +37,15 @@
     </script>
 
     <style>
+      :root {
+        --font-pretendard: 'Pretendard Variable', 'Pretendard', sans-serif;
+      }
       body {
-        font-family: 'Pretendard', sans-serif;
+        font-family: var(--font-pretendard);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        letter-spacing: -0.02em;
+        line-height: 1.5;
       }
       @keyframes float {
         0% { transform: translateY(0px); }
@@ -59,6 +66,16 @@
       .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
       
       .word-keep-all { word-break: keep-all; }
+
+      /* Custom Font Weight for Display headers to mimic Signal Planner's impact */
+      .font-display {
+        font-weight: 800;
+        letter-spacing: -0.04em !important;
+      }
+      
+      h1, h2, h3, h4 {
+        letter-spacing: -0.03em;
+      }
     </style>
   <script type="importmap">
 {
